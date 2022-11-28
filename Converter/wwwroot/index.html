@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="img/convert.png" alt="icon" class="logo">
+            <ul>
+                <li>
+                    <a href="/">Конвертер</a>
+                </li>
+                <li>
+                    <a href="/list.html">Список</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="container">
+            <h2>Перевод значений</h2>
+            <div class="converter-interface">
+                <div class="measure-block">
+                    <h3>Величина</h3>
+                    <form name="measures">
+                        <label>
+                            <input 
+                                    name="measure" 
+                                    type="radio" 
+                                    onchange="radioChange(this)"
+                                    value="currency"
+                                    checked
+                            >
+                            Валюта
+                        </label>
+                        <label>
+                            <input
+                                    name="measure" 
+                                    type="radio"
+                                    onchange="radioChange(this)"
+                                    value="length"
+                            >
+                            Длина
+                        </label>
+                        <label>
+                            <input 
+                                    name="measure" 
+                                    type="radio"
+                                    onchange="radioChange(this)"
+                                    value="weight"
+                            >
+                            Вес
+                        </label>
+                    </form>
+                </div>
+                <div class="input-block">
+                    <h3>Значения</h3>
+                    <form>
+                        <div class="input-block-elem">
+                            <label>
+                                <input 
+                                        type="text"
+                                        value="0"
+                                        id="from-value" 
+                                        class="value-input"
+                                        onchange="fromChange()"
+                                        oninput="fromInput()"
+                                />
+                            </label>
+                            <label>
+                                <select 
+                                        name="currFrom"
+                                        id="from-measure"
+                                        class="measure-select"
+                                        onchange="fromMeasureChange()"
+                                >
+                                    
+                                </select>
+                            </label>
+                        </div>
+                        <div class="input-block-elem">
+                            <label>
+                                <input 
+                                        type="text"
+                                        id="to-value" 
+                                        class="value-input"
+                                        oninput="toInput()"
+                                        onpaste="toInput()"
+                                        disabled
+                                />
+                            </label>
+                            <label>
+                                <select 
+                                        name="currTo"
+                                        id="to-measure"
+                                        class="measure-select"
+                                        onchange="toMeasureChange()"
+                                >
+
+                                </select>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <button onclick="convertAndSend()">Конвертировать</button>
+            </div>
+            <h2>Результаты пользователей</h2>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="js/signalr/dist/browser/signalr.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

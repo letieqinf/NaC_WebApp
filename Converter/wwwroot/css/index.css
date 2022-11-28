@@ -1,0 +1,61 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, serif;
+}
+
+body {
+    display: flex;
+}
+
+#container {
+    margin: 20px 0 0 20px;
+}
+
+.converter-interface {
+    display: grid;
+    grid-template: 
+        "A B" 
+        "A C"
+        / 30% 70%;
+    gap: 8px;
+    
+    width: 280px;
+    
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.measure-block {
+    grid-area: A;
+}
+
+.measure-block form {
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 8px;
+}
+
+.input-block {
+    grid-area: B;
+}
+
+.input-block form {
+    margin-top: 8px;
+}
+
+.input-block-elem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-block-elem select {
+    width: 48px;
+}
+
+button {
+    grid-area: C;
+    
+    padding: 8px 0;
+}

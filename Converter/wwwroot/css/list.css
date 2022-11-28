@@ -1,0 +1,24 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, serif;
+}
+
+body {
+    display: flex;
+}
+
+main {
+    margin: 20px 0 0 20px;
+}
+
+#list tbody tr th {
+    border: 2px solid black;
+    width: 100px;
+}
+
+#list tbody tr td {
+    text-align: center;
+    border: 1px solid black;
+    width: 100px;
+}
